@@ -5,7 +5,9 @@
 
 class simple_ai_player : public player
 {
-    void move(board& board) const;
+public:
+    simple_ai_player(char sign) : player(sign) {}
+    virtual void move(board&) const override;
 };
 
 #endif

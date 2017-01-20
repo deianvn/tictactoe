@@ -16,7 +16,8 @@ public:
     bool wins() const;
     bool full() const;
 private:
-    char data[size][size] { ' ' };
+    char data[size][size] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+    
     int move { 0 };
     void validate_position(const position&) const;
 };
