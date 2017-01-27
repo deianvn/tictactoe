@@ -23,7 +23,7 @@ void board::set(const position& pos, char sign)
     return set(pos.first, pos.second, sign);
 }
 
-std::vector<position> board::available_moves() const
+std::vector<position> board::available_positions() const
 {
     std::vector<position> v;
     

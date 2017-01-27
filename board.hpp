@@ -14,7 +14,7 @@ public:
     char at(int, int) const;
     void set(const position&, char);
     void set(int, int, char);
-    std::vector<position> available_moves() const;
+    std::vector<position> available_positions() const;
     bool wins() const;
     bool full() const;
 private:
