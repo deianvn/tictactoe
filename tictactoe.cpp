@@ -18,7 +18,9 @@ int main()
         current_player->move(board);
         switch_players(current_player, p1, p2);
     }
-    while (!board.full() || !board.wins());
+    while (!board.full() && !board.wins());
+    
+    print_board(board);
     
     return 0;
 }
@@ -29,7 +31,7 @@ void print_board(const board& board)
     {
         for (int j = 0; j < 3; j++)
         {
-            std::cout << ' ' << board.at(std::make_pair(i, j));
+            std::cout << ' ' << board.at(i, j);
         }
         
         std::cout << "\n";

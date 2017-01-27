@@ -11,7 +11,9 @@ class board
 public:
     static constexpr int size = 3;
     char at(const position&) const;
+    char at(int, int) const;
     void set(const position&, char);
+    void set(int, int, char);
     std::vector<position> available_moves() const;
     bool wins() const;
     bool full() const;
@@ -19,7 +21,7 @@ private:
     char data[size][size] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
     
     int move { 0 };
-    void validate_position(const position&) const;
+    void validate_position(int, int) const;
 };
 
 #endif
