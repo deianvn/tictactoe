@@ -15,10 +15,7 @@ void human_player::move(board& board) const
             continue;
         };
         
-        y = (move - 1) / 3;
-        x = (move - 1) % 3;
-        
-        if (move >= 1 && move <= 9 && board.is_free(x, y)) break;
+        if (move >= 1 && move <= 9 && board.is_free(x = (move - 1) % 3, y = (move - 1) / 3)) break;
         
         std::cout << "Position is taken!" << std::endl;
     }
