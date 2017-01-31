@@ -7,10 +7,10 @@ bool is_int(std::string& str)
     
     while (it != end)
     {
-        if (!std::isdigit(*it++)) break;
+        if (!std::isdigit(*it++)) return false;
     }
     
-    return it == end;
+    return true;
 }
 
 bool next_int(std::istream& input_stream, int& arg)

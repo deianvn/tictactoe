@@ -61,19 +61,36 @@ bool board::full() const
 
 bool board::wins() const
 {
-    // brute force win checking
-    return
-        (data[0][0] != ' ' &&
-            ((data[0][0] == data[0][1] && data[0][1] == data[0][2]) ||
-            (data[0][0] == data[1][1] && data[1][1] == data[2][2]) ||
-            (data[0][0] == data[1][0] && data[1][0] == data[2][0]))) ||
-        (data[2][2] != ' ' &&
-            ((data[2][2] == data[1][2] && data[1][2] == data[0][2]) ||
-            (data[2][2] == data[2][1] && data[2][1] == data[2][0]))) ||
-        (data[1][1] != ' ' &&
-            ((data[0][2] == data[1][1] && data[1][1] == data[2][0]) ||
-            (data[1][1] == data[0][1] && data[1][1] == data[2][1]) ||
-            (data[1][1] == data[1][0] && data[1][1] == data[2][1])));
+    char s1, s2, s3;
+    
+    for (int i = 0; i < 3; i++)
+    {
+        s1 = at(0, i);
+        s2 = at(1, i);
+        s3 = at(2, i);
+        
+        if (s1 != ' ' && s1 == s2 && s2 == s3) return true;
+        
+        s1 = at(i, 0);
+        s2 = at(i, 1);
+        s3 = at(i, 2);
+        
+        if (s1 != ' ' && s1 == s2 && s2 == s3) return true;
+    }
+    
+    s1 = at(1, 1);
+    
+    if (s1 == ' ') return false;
+    
+    for (int i = 0; i < 3; i+= 2)
+    {
+        s2 = at(0, i);
+        s3 = at(2, 2 - i);
+        
+        if (s1 != ' ' && s1 == s2 && s2 == s3) return true;
+    }
+    
+    return false;
 }
 
 void board::validate_position(int x, int y) const
