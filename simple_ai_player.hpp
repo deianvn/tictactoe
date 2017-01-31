@@ -10,4 +10,4 @@ public:
     virtual void move(board&) const override;
 };
 
-#endif
+#endif //TICTACTOE_SIMPLE_AI_PLAYER_HPP

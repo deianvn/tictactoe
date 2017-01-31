@@ -3,7 +3,7 @@
 char board::at(int x, int y) const
 {
     validate_position(x, y);
-    return data[x][y];
+    return data[y][x];
 }
 
 char board::at(const position& pos) const
@@ -11,10 +11,29 @@ char board::at(const position& pos) const
     return at(pos.first, pos.second);
 }
 
+bool board::is_free(int x, int y)
+{
+    try
+    {
+        validate_position(x, y);
+    }
+    catch (std::exception& e)
+    {
+        return false;
+    }
+    
+    return at(x, y) == ' ';
+}
+
+bool board::is_free(const position& pos)
+{
+    is_free(pos.first, pos.second);
+}
+
 void board::set(int x, int y, char sign)
 {
     validate_position(x, y);
-    data[x][y] = sign;
+    data[y][x] = sign;
     ++move;
 }
 
@@ -30,7 +49,7 @@ std::vector<position> board::available_positions() const
     for (int i = 0; i < size; i++)
         for (int j = 0; j < size; j++)
             if (data[i][j] == ' ')
-                v.push_back(std::make_pair(i, j));
+                v.push_back(std::make_pair(j, i));
     
     return std::move(v);
 }

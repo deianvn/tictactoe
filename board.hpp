@@ -12,6 +12,8 @@ public:
     static constexpr int size = 3;
     char at(const position&) const;
     char at(int, int) const;
+    bool is_free(int, int);
+    bool is_free(const position&);
     void set(const position&, char);
     void set(int, int, char);
     std::vector<position> available_positions() const;
