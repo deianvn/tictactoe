@@ -13,7 +13,7 @@ namespace tictactoe
         return at(pos.first, pos.second);
     }
 
-    bool board::is_free(int x, int y)
+    bool board::is_free(int x, int y) const
     {
         try
         {
@@ -27,7 +27,7 @@ namespace tictactoe
         return at(x, y) == ' ';
     }
 
-    bool board::is_free(const position& pos)
+    bool board::is_free(const position& pos) const
     {
         is_free(pos.first, pos.second);
     }
@@ -48,8 +48,8 @@ namespace tictactoe
     {
         std::vector<position> v;
         
-        for (int i = 0; i < size; i++)
-            for (int j = 0; j < size; j++)
+        for (int i = 0; i < SIZE; i++)
+            for (int j = 0; j < SIZE; j++)
                 if (data[i][j] == ' ')
                     v.push_back(std::make_pair(j, i));
         
@@ -58,14 +58,14 @@ namespace tictactoe
 
     bool board::full() const
     {
-        return move >= size * size;
+        return move >= SIZE * SIZE;
     }
 
     bool board::wins() const
     {
         char s1, s2, s3;
         
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < SIZE; i++)
         {
             s1 = at(0, i);
             s2 = at(1, i);
@@ -84,7 +84,7 @@ namespace tictactoe
         
         if (s1 == ' ') return false;
         
-        for (int i = 0; i < 3; i+= 2)
+        for (int i = 0; i < SIZE; i+= 2)
         {
             s2 = at(0, i);
             s3 = at(2, 2 - i);
@@ -97,7 +97,7 @@ namespace tictactoe
 
     void board::validate_position(int x, int y) const
     {
-        if (x < 0 || x >= size || y < 0 || y >= size)
+        if (x < 0 || x >= SIZE || y < 0 || y >= SIZE)
         {
             throw std::exception {};
         }
