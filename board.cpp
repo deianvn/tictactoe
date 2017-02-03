@@ -51,7 +51,7 @@ std::vector<position> board::available_positions() const
             if (data[i][j] == ' ')
                 v.push_back(std::make_pair(j, i));
     
-    return std::move(v);
+    return v;
 }
 
 bool board::full() const

@@ -10,12 +10,12 @@ class board
 {
 public:
     static constexpr int size = 3;
-    char at(const position&) const;
-    char at(int, int) const;
-    bool is_free(int, int);
-    bool is_free(const position&);
-    void set(const position&, char);
-    void set(int, int, char);
+    char at(const position& pos) const;
+    char at(int x, int y) const;
+    bool is_free(int x, int y);
+    bool is_free(const position& pos);
+    void set(const position& pos, char sign);
+    void set(int x, int y, char sign);
     std::vector<position> available_positions() const;
     bool wins() const;
     bool full() const;

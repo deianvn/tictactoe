@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 
-bool is_int(std::string&);
+bool is_int(std::string& str);
 
-bool next_int(std::istream&, int&);
+bool next_int(std::istream& input_stream, int& arg);
 
 #endif //TICTACTOE_BASIC_IO_HPP

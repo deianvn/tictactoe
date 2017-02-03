@@ -9,13 +9,13 @@ void human_player::move(board& board) const
     {
         std::cout << "Enter move 1-9\n> ";
         
-        if (!next_int(std::cin, move))
+        if (!next_int(std::cin, move) || move < 1 || move > 9)
         {
             std::cout << "Invalid move!" << std::endl;
             continue;
         };
         
-        if (move >= 1 && move <= 9 && board.is_free(x = (move - 1) % 3, y = (move - 1) / 3)) break;
+        if (board.is_free(x = (move - 1) % 3, y = (move - 1) / 3)) break;
         
         std::cout << "Position is taken!" << std::endl;
     }
