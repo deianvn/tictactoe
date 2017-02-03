@@ -12,6 +12,6 @@ namespace tictactoe
         std::vector<position> available_positions = board.available_positions();
         std::uniform_int_distribution<int> gen(0, available_positions.size() - 1);
         board.set(available_positions[gen(mt)], get_sign());
-        std::cout << "\nSimple AI player " << get_sign() << " moves:\n" << std::endl;
+        std::cout << "Simple AI player " << get_sign() << " moves:\n" << std::endl;
     }
 }

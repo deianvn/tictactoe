@@ -8,7 +8,7 @@ namespace tictactoe
     class game
     {
     public:
-        inline game(player& p1, player& p2) : p1(p1), p2(p2)
+        game(player& p1, player& p2) : p1(p1), p2(p2)
         {
             current_player = &p1;
         };

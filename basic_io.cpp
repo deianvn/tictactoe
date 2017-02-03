@@ -7,6 +7,8 @@ namespace tictactoe
         auto it = std::begin(str);
         auto end = std::end(str);
         
+        if (it == end) return false;
+        
         while (it != end)
         {
             if (!std::isdigit(*it++)) return false;
