@@ -2,9 +2,7 @@
 #include <iostream>
 
 void game::play()
-{
-    std::cout << "Tic Tac Toe\n" << std::endl;
-    
+{    
     do
     {
         draw_board();
@@ -18,11 +16,11 @@ void game::play()
     
     if (b.wins())
     {
-        std::cout << "Player " << current_player->get_sign() << " wins!" << std::endl;
+        std::cout << "Player " << current_player->get_sign() << " wins!\n" << std::endl;
     }
     else
     {
-        std::cout << "Game is tie!" << std::endl;
+        std::cout << "Game is tie!\n" << std::endl;
     }
 }
 

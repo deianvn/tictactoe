@@ -21,5 +21,5 @@ void human_player::move(board& board) const
     }
     
     board.set(x, y, get_sign());
-    std::cout << "\nHuman player " << get_sign() << " moves:" << std::endl;
+    std::cout << "\nHuman player " << get_sign() << " moves:\n" << std::endl;
 }
