@@ -4,8 +4,11 @@
 #include <iostream>
 #include <string>
 
-bool is_int(std::string& str);
+namespace tictactoe
+{
+    bool is_int(std::string& str);
 
-bool next_int(std::istream& input_stream, int& arg);
+    bool next_int(std::istream& input_stream, int& arg);
+}
 
 #endif //TICTACTOE_BASIC_IO_HPP

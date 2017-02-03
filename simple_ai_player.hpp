@@ -3,11 +3,14 @@
 
 #include "player.hpp"
 
-class simple_ai_player : public player
+namespace tictactoe
 {
-public:
-    simple_ai_player(char sign) : player(sign) {}
-    virtual void move(board& board) const override;
-};
+    class simple_ai_player : public player
+    {
+    public:
+        simple_ai_player(char sign) : player(sign) {}
+        virtual void move(board& board) const override;
+    };
+}
 
 #endif //TICTACTOE_SIMPLE_AI_PLAYER_HPP

@@ -1,3 +1,4 @@
+#include "tictactoe.hpp"
 #include "simple_ai_player.hpp"
 #include "human_player.hpp"
 #include "game.hpp"
@@ -6,9 +7,7 @@
 #include <iostream>
 #include <memory>
 
-enum class menu_option { quit = 0, human_vs_human = 1, human_vs_cpu = 2, cpu_vs_human = 3, cpu_vs_cpu = 4 };
-
-menu_option menu();
+using namespace tictactoe;
 
 int main()
 {
