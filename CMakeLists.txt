@@ -1,3 +1,7 @@
 cmake_minimum_required (VERSION 2.6)
 project (tictactoe)
 add_executable(tictactoe board.cpp simple_ai_player.cpp human_player.cpp self_learning_ai_player.cpp game.cpp basic_io.cpp tictactoe.cpp)
+set_property(TARGET tictactoe PROPERTY CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+

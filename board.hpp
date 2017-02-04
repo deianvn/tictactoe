@@ -23,7 +23,7 @@ namespace tictactoe
         bool wins() const;
         bool full() const;
     private:
-        char data[SIZE][SIZE] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+        char data[SIZE][SIZE] { { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
         
         int move { 0 };
         void validate_position(int, int) const;
