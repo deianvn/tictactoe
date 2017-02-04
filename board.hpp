@@ -23,11 +23,13 @@ namespace tictactoe
         bool wins() const;
         bool full() const;
     private:
-        char data[SIZE][SIZE] { { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
+        char data[SIZE * SIZE] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
         
         int move { 0 };
-        void validate_position(int, int) const;
+        void validate_position(int x, int y) const;
+		int convert_2d_to_1d_coordinates(int x, int y) const;
     };
 }
 
 #endif
+

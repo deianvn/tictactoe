@@ -5,7 +5,7 @@ namespace tictactoe
     char board::at(int x, int y) const
     {
         validate_position(x, y);
-        return data[y][x];
+        return data[convert_2d_to_1d_coordinates(x, y)];
     }
 
     char board::at(const position& pos) const
@@ -35,7 +35,7 @@ namespace tictactoe
     void board::set(int x, int y, char sign)
     {
         validate_position(x, y);
-        data[y][x] = sign;
+        data[convert_2d_to_1d_coordinates(x, y)] = sign;
         ++move;
     }
 
@@ -50,7 +50,7 @@ namespace tictactoe
         
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
-                if (data[i][j] == ' ')
+                if (at(j, i) == ' ')
                     v.push_back(std::make_pair(j, i));
         
         return v;
@@ -101,5 +101,10 @@ namespace tictactoe
         {
             throw std::exception {};
         }
+    }
+    
+    int board::convert_2d_to_1d_coordinates(int x, int y) const
+    {
+        return y * SIZE + x;
     }
 }
