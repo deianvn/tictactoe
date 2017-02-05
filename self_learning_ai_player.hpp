@@ -15,14 +15,14 @@ namespace tictactoe
         {
             load_brain_data();
         }
-        
+
         virtual void move(board& board) const override;
     private:
         void load_brain_data();
         void save_brain_data() const;
-        
+
         std::string brain_data_path;
-        std::priority_queue<int> brain {};
+        std::priority_queue<std::string> brain {};
     };
 }
 

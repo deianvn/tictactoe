@@ -4,4 +4,3 @@ add_executable(tictactoe board.cpp simple_ai_player.cpp human_player.cpp self_le
 set_property(TARGET tictactoe PROPERTY CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-

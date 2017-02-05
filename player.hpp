@@ -16,4 +16,4 @@ namespace tictactoe
     };
 }
 
-#endif
+#endif //TICTACTOE_PLAYER_HPP

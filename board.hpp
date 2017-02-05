@@ -12,7 +12,7 @@ namespace tictactoe
     {
     public:
         static constexpr int SIZE = 3;
-        
+
         char at(const position& pos) const;
         char at(int x, int y) const;
         bool is_free(int x, int y) const;
@@ -24,12 +24,11 @@ namespace tictactoe
         bool full() const;
     private:
         char data[SIZE * SIZE] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
-        
+
         int move { 0 };
         void validate_position(int x, int y) const;
-		int convert_2d_to_1d_coordinates(int x, int y) const;
+        int convert_2d_to_1d_coordinates(int x, int y) const;
     };
 }
 
-#endif
-
+#endif //TICTACTOE_BOARD_HPP
