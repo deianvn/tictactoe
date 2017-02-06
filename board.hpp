@@ -2,6 +2,7 @@
 #define TICTACTOE_BOARD_HPP
 
 #include <utility>
+#include <array>
 #include <vector>
 
 namespace tictactoe
@@ -23,7 +24,7 @@ namespace tictactoe
         bool wins() const;
         bool full() const;
     private:
-        char data[SIZE * SIZE] { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+        std::array<char, SIZE * SIZE> data { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
 
         int move { 0 };
         void validate_position(int x, int y) const;
